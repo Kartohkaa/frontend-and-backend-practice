@@ -4,36 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары</title>
-    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <div id="header">Хэдер</div>
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li>
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-        </ul>
+    <div class="page-container">
+        <div class="header">Хэдер</div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1 class="section-title">Наши товары</h1>
+            
+            <div class="goods-container">
+                <div class="product-card">
+                    <img class="product-image" src="../images/good1.png" alt="Товар 1">
+                    <h3 class="product-name">Смешная фотожаба 1</h3>
+                    <p class="product-price">Цена: 1000 руб.</p>
+                </div>
+                
+                <div class="product-card">
+                    <img class="product-image" src="../images/good2.png" alt="Товар 2">
+                    <h3 class="product-name">Смешная фотожаба 2</h3>
+                    <p class="product-price">Цена: 2000 руб.</p>
+                </div>
+                
+                <div class="product-card">
+                    <img class="product-image" src="../images/good3.png" alt="Товар 3">
+                    <h3 class="product-name">Смешная фотожаба 3</h3>
+                    <p class="product-price">Цена: 3000 руб.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Футер</div>
     </div>
-    <div id="content">
-        <div>
-            <img src="../images/good1.png" alt="Товар 1" width="200" height="200">
-            <p>Смешная фотожаба 1</p>
-            <p>Цена: 1000 руб.</p>
-        </div>
-        <div>
-            <img src="../images/good2.png" alt="Товар 2" width="200" height="200">
-            <p>Смежная фотожаба 2</p>
-            <p>Цена: 2000 руб.</p>
-        </div>
-        <div>
-            <img src="../images/good3.png" alt="Товар 3" width="200" height="200">
-            <p>Смешная фотожаба 3</p>
-            <p>Цена: 3000 руб.</p>
-        </div>
-    </div>
-    <div id="footer">Футер</div>
 </body>
 </html>
