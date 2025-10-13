@@ -8,4 +8,4 @@
 
 ## Как посмотреть
 
-Страница доступна по адресу: `https://kartohkaa.github.io/frontend-and-backend-practice/`
+[Посетить мой сайт](https://kartohkaa.github.io/frontend-and-backend-practice)
