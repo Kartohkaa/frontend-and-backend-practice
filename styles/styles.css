@@ -323,3 +323,55 @@ body {
 }
 
 
+/* ===== CSS GRID И АДАПТИВНОСТЬ ===== */
+.page-container {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+.header { grid-area: header; }
+.nav { grid-area: nav; }
+main.content { grid-area: main; }
+.footer { grid-area: footer; }
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    main.content {
+        padding: 20px;
+    }
+    
+    .skill-tag {
+        text-align: center;
+        padding: 10px 15px;
+    }
+}

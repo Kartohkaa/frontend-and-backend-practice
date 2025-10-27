@@ -8,8 +8,11 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="header">Хэдер</div>
-        <div class="nav">
+        <header class="header">
+            <h1>Хэдер</h1>
+        </header>
+        
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
@@ -17,43 +20,53 @@
                 <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
             </ul>
-        </div>
-        <div class="content">
-            <div class="profile-header">
+        </nav>
+        
+        <main class="content">
+            <article class="profile-header">
                 <h1 class="profile-title">Информация об авторе</h1>
                 <img class="profile-photo" src="images/Me.png" alt="Фото автора">
                 <h2 class="profile-name">Шульга Михаил Антонович</h2>
                 <p class="profile-group">ЭФБО-05-24</p>
-            </div>
+            </article>
 
-            <div class="about-me">
+            <section class="about-me">
+                <h2>Обо мне</h2>
                 <p>Обо мне: Я жаба-мафеозе, рожденный на краю бездны, в низине всего света. Глупость рано ударила в голову - видимо, болотные испарения сказались. В четыре года уже активно квакал ругательствами на лягушачьем диалекте. Потом болотная школа, камуфляжная форма, драки с пиявками и стрекозами, слизень вместо клея. Так я становился сильней и хитрей. Воровал мух из чужих паутин.</p>
-            </div>
+            </section>
 
-            <div class="skills-container">
-                <div class="skill-tag">Непревзойдённая обоятельность</div>
-                <div class="skill-tag">Непревзойдённый авторитет</div>
-                <div class="skill-tag">Непревзойдённое кваканье на 5 языках</div>
-                <div class="skill-tag">Непревзойдённая власть и сила</div>
-            </div>
+            <section class="skills-container">
+                <h2>Мои навыки</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag">Непревзойдённая обоятельность</div>
+                    <div class="skill-tag">Непревзойдённый авторитет</div>
+                    <div class="skill-tag">Непревзойдённое кваканье на 5 языках</div>
+                    <div class="skill-tag">Непревзойдённая власть и сила</div>
+                </div>
+            </section>
 
-            <div class="experience-section">
+            <section class="experience-section">
                 <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Главный по мухам</h3>
-                    <p class="experience-desc">Контролировал поставки мух на болотном рынке. Организовал систему распределения насекомых.</p>
+                <div class="experience-grid">
+                    <article class="experience-card">
+                        <h3 class="experience-title">Главный по мухам</h3>
+                        <p class="experience-desc">Контролировал поставки мух на болотном рынке. Организовал систему распределения насекомых.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Мастер подстав</h3>
+                        <p class="experience-desc">Разрабатывал и внедрял схемы по нейтрализации лягушачьих конкурентов. Специализация - чугунные колокола.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Болотный рэпер</h3>
+                        <p class="experience-desc">Читал кваком и пел под луной. Создал уникальный стиль "Болотный бит".</p>
+                    </article>
                 </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Мастер подстав</h3>
-                    <p class="experience-desc">Разрабатывал и внедрял схемы по нейтрализации лягушачьих конкурентов. Специализация - чугунные колокола.</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Болотный рэпер</h3>
-                    <p class="experience-desc">Читал кваком и пел под луной. Создал уникальный стиль "Болотный бит".</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer">Футер</div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>Футер</p>
+        </footer>
     </div>
 </body>
 </html>
