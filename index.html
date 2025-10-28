@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- Наши стили (для темы) -->
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="bg-primary text-white py-3">
@@ -74,7 +76,8 @@
                 <div class="card-body p-4">
                     <div class="row align-items-center">
                         <div class="col-md-3 text-center mb-3 mb-md-0">
-                            <img src="images/Me.png" alt="Фото автора" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                            <img src="images/Me.png" alt="Фото автора" class="img-fluid rounded-circle"
+                                style="width: 150px; height: 150px; object-fit: cover;">
                         </div>
                         <div class="col-md-9">
                             <h2 class="card-title h4 text-primary">Шульга Михаил Антонович</h2>
@@ -238,21 +241,37 @@
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', newTheme);
-            
+
             const icon = themeToggle.querySelector('i');
             icon.className = newTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
-            
+
+            // Меняем классы для Bootstrap компонентов
+            updateBootstrapTheme(newTheme);
+
             localStorage.setItem('theme', newTheme);
         });
+
+        // Функция для обновления Bootstrap темы
+        function updateBootstrapTheme(theme) {
+            const body = document.body;
+            if (theme === 'dark') {
+                body.classList.add('bg-dark', 'text-light');
+            } else {
+                body.classList.remove('bg-dark', 'text-light');
+            }
+        }
 
         // Загрузка темы
         document.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
-            
+
             const icon = themeToggle.querySelector('i');
             icon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+
+            updateBootstrapTheme(savedTheme);
         });
     </script>
 </body>
+
 </html>

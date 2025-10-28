@@ -539,3 +539,70 @@ body {
         display: block;
     }
 }
+
+/* ===== ТЕМНАЯ ТЕМА ДЛЯ BOOTSTRAP ===== */
+
+[data-theme="dark"] body {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .bg-light {
+    background-color: var(--color-bg-secondary) !important;
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .card {
+    background-color: var(--color-bg);
+    border-color: var(--color-bg-secondary);
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .card-header {
+    background-color: var(--color-bg-secondary) !important;
+    border-bottom-color: var(--color-bg-secondary);
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--color-text-light) !important;
+}
+
+[data-theme="dark"] .text-primary {
+    color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .progress {
+    background-color: var(--color-bg-secondary);
+}
+
+[data-theme="dark"] .navbar-dark {
+    background-color: var(--color-bg-dark) !important;
+}
+
+[data-theme="dark"] .bg-primary {
+    background-color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .bg-dark {
+    background-color: var(--color-bg-dark) !important;
+}
+
+[data-theme="dark"] .btn-outline-light {
+    color: var(--color-text-inverse);
+    border-color: var(--color-text-inverse);
+}
+
+[data-theme="dark"] .btn-outline-light:hover {
+    background-color: var(--color-text-inverse);
+    color: var(--color-bg-dark);
+}
+
+[data-theme="dark"] .shadow-sm {
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Исправляем цвета для прогресс-баров в темной теме */
+[data-theme="dark"] .progress-bar {
+    color: white;
+}
