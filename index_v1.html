@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моё портфолио</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="page">
+        <!-- Шапка -->
+        <header class="header">
+            <h1 class="header__title">Моё портфолио</h1>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </header>
+
+        <!-- Навигация -->
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Остальной контент без изменений -->
+        <main class="main">
+            <!-- Профиль -->
+            <section class="profile">
+                <div class="profile__card">
+                    <img class="profile__photo" src="images/Me.png" alt="Фото автора">
+                    <div class="profile__info">
+                        <h2 class="profile__name">Шульга Михаил Антонович</h2>
+                        <p class="profile__group">ЭФБО-05-24</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Обо мне -->
+            <section class="about">
+                <h2 class="about__title">Обо мне</h2>
+                <div class="about__content">
+                    <p class="about__text">
+                        Обо мне: Я жаба-мафеозе, рожденный на краю бездны, в низине всего света.
+                        Глупость рано ударила в голову - видимо, болотные испарения сказались.
+                        В четыре года уже активно квакал ругательствами на лягушачьем диалекте.
+                        Потом болотная школа, камуфляжная форма, драки с пиявками и стрекозами,
+                        слизень вместо клея. Так я становился сильней и хитрей. Воровал мух из чужих паутин.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Навыки -->
+            <section class="skills">
+                <h2 class="skills__title">Мои навыки</h2>
+                <div class="skills__list">
+                    <div class="skill skill--html">
+                        <span class="skill__name">HTML</span>
+                    </div>
+                    <div class="skill skill--css">
+                        <span class="skill__name">CSS</span>
+                    </div>
+                    <div class="skill skill--js">
+                        <span class="skill__name">JavaScript</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Проекты -->
+            <section class="projects">
+                <h2 class="projects__title">Проекты</h2>
+                <div class="projects__grid">
+                    <div class="project-card">
+                        <h3 class="project-card__title">Личный сайт</h3>
+                        <p class="project-card__desc">Сайт-портфолио на HTML и CSS</p>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-card__title">Todo приложение</h3>
+                        <p class="project-card__desc">Простое приложение для задач</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Подвал -->
+        <footer class="footer">
+            <p class="footer__text">© 2024 Мой сайт</p>
+        </footer>
+    </div>
+
+    <script>
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            
+            // Сохраняем тему в localStorage
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Загрузка темы при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>

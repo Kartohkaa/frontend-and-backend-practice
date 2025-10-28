@@ -4,78 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Наши стили -->
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <div class="page">
-        <header class="header">
-            <h1 class="header__title">Товары</h1>
-            <button class="theme-toggle" id="themeToggle">🌙</button>
-        </header>
-        
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a class="nav__link" href="../index.html">Главная</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="news.html">Новости</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="practices.html">Практики</a>
-                </li>
-                <li class="nav__item nav__item--active">
-                    <a class="nav__link" href="goods.html">Товары</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="contacts.html">Контакты</a>
-                </li>
-            </ul>
-        </nav>
-
-        <main class="main">
-            <h1 class="projects__title">Наши товары</h1>
-            
-            <div class="goods-container">
-                <div class="product-card">
-                    <img class="product-image" src="../images/good1.png" alt="Товар 1">
-                    <h3 class="product-name">Смешная фотожаба 1</h3>
-                    <p class="product-price">Цена: 1000 руб.</p>
+    <!-- Header -->
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h1 class="h4 mb-0">Товары</h1>
                 </div>
-                
-                <div class="product-card">
-                    <img class="product-image" src="../images/good2.png" alt="Товар 2">
-                    <h3 class="product-name">Смешная фотожаба 2</h3>
-                    <p class="product-price">Цена: 2000 руб.</p>
-                </div>
-                
-                <div class="product-card">
-                    <img class="product-image" src="../images/good3.png" alt="Товар 3">
-                    <h3 class="product-name">Смешная фотожаба 3</h3>
-                    <p class="product-price">Цена: 3000 руб.</p>
+                <div class="col-auto">
+                    <button class="btn btn-outline-light btn-sm" id="themeToggle">
+                        <i class="bi bi-moon"></i>
+                    </button>
                 </div>
             </div>
-        </main>
+        </div>
+    </header>
 
-        <footer class="footer">
-            <p class="footer__text">© 2024 Мой сайт</p>
-        </footer>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="bi bi-house me-1"></i>Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">
+                            <i class="bi bi-newspaper me-1"></i>Новости
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="practices.html">
+                            <i class="bi bi-code-slash me-1"></i>Практики
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="goods.html">
+                            <i class="bi bi-cart me-1"></i>Товары
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">
+                            <i class="bi bi-telephone me-1"></i>Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-4">
+        <div class="row mb-4">
+            <div class="col">
+                <h2 class="h4">Наши товары</h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Товар 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="../images/good1.png" class="card-img-top" alt="Смешная фотожаба 1" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Смешная фотожаба 1</h5>
+                        <p class="card-text text-muted mb-3">Уникальная фотожаба для поднятия настроения</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-primary mb-0">1000 руб.</span>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="bi bi-cart-plus me-1"></i>В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="../images/good2.png" class="card-img-top" alt="Смешная фотожаба 2" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Смешная фотожаба 2</h5>
+                        <p class="card-text text-muted mb-3">Эксклюзивная фотожаба с элементами юмора</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-primary mb-0">2000 руб.</span>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="bi bi-cart-plus me-1"></i>В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="../images/good3.png" class="card-img-top" alt="Смешная фотожаба 3" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Смешная фотожаба 3</h5>
+                        <p class="card-text text-muted mb-3">Премиум фотожаба для истинных ценителей</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 text-primary mb-0">3000 руб.</span>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="bi bi-cart-plus me-1"></i>В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2024 Мой сайт</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="contacts.html" class="text-white text-decoration-none">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Переключение темы
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', newTheme);
-            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            
+            const icon = themeToggle.querySelector('i');
+            icon.className = newTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+            
             localStorage.setItem('theme', newTheme);
         });
 
+        // Загрузка темы
         document.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
-            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            
+            const icon = themeToggle.querySelector('i');
+            icon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
         });
     </script>
 </body>
