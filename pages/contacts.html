@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <style>
-        /* Стили для модального окна */
+        /* Стили для модального окна с поддержкой темы */
         dialog::backdrop {
             background: rgba(0, 0, 0, 0.6);
             animation: fadeIn 0.3s ease;
@@ -15,27 +15,29 @@
             border: none;
             border-radius: 12px;
             padding: 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow-lg);
             animation: slideIn 0.3s ease;
             max-width: 500px;
             width: 90vw;
             max-height: 90vh;
             overflow-y: auto;
+            background: var(--color-bg);
         }
         .modal-header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-darker) 100%);
+            color: var(--color-text-inverse);
             padding: 1.5rem;
             border-radius: 12px 12px 0 0;
             margin: 0;
         }
         .modal-header h2 {
             margin: 0;
-            color: white;
+            color: var(--color-text-inverse);
             font-size: 1.5rem;
         }
         .modal-content {
             padding: 2rem;
+            background: var(--color-bg);
         }
         .form-group {
             margin-bottom: 1.5rem;
@@ -44,24 +46,26 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--color-text);
         }
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 0.75rem;
-            border: 2px solid #e9ecef;
+            border: 2px solid var(--color-bg-secondary);
             border-radius: 6px;
             font-size: 1rem;
             transition: border-color 0.3s ease;
             box-sizing: border-box;
+            background: var(--color-bg);
+            color: var(--color-text);
         }
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--color-primary);
         }
         .form-group textarea {
             min-height: 100px;
@@ -83,23 +87,24 @@
             font-weight: 600;
         }
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: var(--color-text-inverse);
         }
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
         .btn-secondary {
-            background: #f8f9fa;
-            color: #2c3e50;
-            border: 2px solid #e9ecef;
+            background: var(--color-bg-secondary);
+            color: var(--color-text);
+            border: 2px solid var(--color-bg-secondary);
         }
         .btn-secondary:hover {
-            background: #e9ecef;
+            background: var(--color-bg-dark);
+            color: var(--color-text-inverse);
         }
         .required {
-            color: #e74c3c;
+            color: var(--color-error);
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -131,19 +136,34 @@
     </style>
 </head>
 <body>
-    <div class="page-container">
-        <div class="header">Хэдер</div>
-        <div class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+    <div class="page">
+        <header class="header">
+            <h1 class="header__title">Контакты</h1>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
             </ul>
-        </div>
-        <div class="content">
-            <h1 class="section-title">Контакты</h1>
+        </nav>
+
+        <main class="main">
+            <h1 class="projects__title">Контакты</h1>
             
             <div class="contacts-container">
                 <div class="contact-info">
@@ -165,8 +185,11 @@
                 
                 <button class="call-button" onclick="contactModal.showModal()">Позвоните мне</button>
             </div>
-        </div>
-        <div class="footer">Футер</div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">© 2024 Мой сайт</p>
+        </footer>
     </div>
 
     <!-- Модальное окно для формы обратной связи -->
@@ -207,9 +230,7 @@
                 </div>
 
                 <div class="modal-actions">
-                    <!-- Кнопка отмены с автоматическим закрытием через form method="dialog" -->
                     <button type="submit" class="btn btn-secondary">Отмена</button>
-                    <!-- Кнопка отправки с обработкой через JavaScript -->
                     <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
                 </div>
             </form>
@@ -222,13 +243,11 @@
             const form = document.getElementById('feedbackForm');
             const formData = new FormData(form);
 
-            // Простая валидация
             if (!form.checkValidity()) {
                 form.reportValidity();
                 return;
             }
 
-            // Собираем данные формы
             const data = {
                 name: formData.get('name'),
                 phone: formData.get('phone'),
@@ -237,16 +256,9 @@
                 message: formData.get('message')
             };
 
-            // В реальном приложении здесь был бы AJAX-запрос
             console.log('Данные формы:', data);
-
-            // Показываем уведомление об успешной отправке
             alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
-
-            // Закрываем модальное окно
             contactModal.close();
-
-            // Очищаем форму
             form.reset();
         }
 
@@ -257,11 +269,28 @@
             }
         });
 
-        // Обработка отправки формы через Enter (предотвращаем стандартное поведение)
+        // Обработка отправки формы через Enter
         document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
             if (event.key === 'Enter' && event.target.type !== 'textarea') {
                 event.preventDefault();
             }
+        });
+
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Загрузка темы при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
         });
     </script>
 </body>
