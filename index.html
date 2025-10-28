@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Моё портфолио</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-
 <body>
     <div class="page">
         <!-- Шапка -->
         <header class="header">
             <h1 class="header__title">Моё портфолио</h1>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
         </header>
 
         <!-- Навигация -->
@@ -25,12 +24,18 @@
                     <a class="nav__link" href="pages/news.html">Новости</a>
                 </li>
                 <li class="nav__item">
+                    <a class="nav__link" href="pages/practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
                     <a class="nav__link" href="pages/contacts.html">Контакты</a>
                 </li>
             </ul>
         </nav>
 
-        <!-- Основной контент -->
+        <!-- Остальной контент без изменений -->
         <main class="main">
             <!-- Профиль -->
             <section class="profile">
@@ -88,12 +93,32 @@
                 </div>
             </section>
         </main>
-
+        
         <!-- Подвал -->
         <footer class="footer">
             <p class="footer__text">© 2024 Мой сайт</p>
         </footer>
     </div>
-</body>
 
+    <script>
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            
+            // Сохраняем тему в localStorage
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Загрузка темы при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
 </html>

@@ -1,5 +1,102 @@
 
 
+/* ===== CSS ПЕРЕМЕННЫЕ И ТЕМНАЯ ТЕМА ===== */
+:root {
+  /* Цветовая палитра - светлая тема */
+  --color-primary: #667eea;
+  --color-primary-dark: #5a6fd8;
+  --color-secondary: #764ba2;
+  --color-accent: #4facfe;
+  --color-success: #2ecc71;
+  --color-warning: #f39c12;
+  --color-error: #e74c3c;
+  
+  /* Текст */
+  --color-text: #2c3e50;
+  --color-text-light: #7f8c8d;
+  --color-text-inverse: #ffffff;
+  
+  /* Фоны */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-dark: #2c3e50;
+  
+  /* Тени */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+  
+  /* Скругления */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  /* Отступы */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  
+  /* Типографика */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  
+  /* Анимации */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Темная тема */
+[data-theme="dark"] {
+  --color-text: #ecf0f1;
+  --color-text-light: #bdc3c7;
+  --color-bg: #2c3e50;
+  --color-bg-secondary: #34495e;
+  --color-bg-dark: #1a252f;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+/* Применение темы к body */
+body {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-text);
+}
+
+.page {
+  background: var(--color-bg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Переключатель темы */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  padding: var(--space-xs);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
 /* ===== БАЗОВЫЕ СТИЛИ ===== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный шрифт для лучшей читаемости */
@@ -620,3 +717,4 @@ body {
     background: linear-gradient(135deg, #f0db4f 0%, #f7df1e 100%);
     color: #2c3e50; /* Темный текст для желтого фона */
 }
+
