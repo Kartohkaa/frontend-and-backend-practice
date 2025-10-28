@@ -576,3 +576,47 @@ body {
         align-items: center;
     }
 }
+/* Центрирование навыков и проектов по левому краю */
+.skills__title {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-align: left; /* Изменено с center на left */
+}
+
+.skills__list {
+    display: flex;
+    justify-content: flex-start; /* Изменено с center на flex-start */
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.projects__title {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-align: left; /* Изменено с center на left */
+}
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: start; /* Добавлено для выравнивания по левому краю */
+}
+
+/* Индивидуальные цвета для навыков */
+.skill--html {
+    background: linear-gradient(135deg, #e34c26 0%, #f06529 100%);
+}
+
+.skill--css {
+    background: linear-gradient(135deg, #264de4 0%, #2965f1 100%);
+}
+
+.skill--js {
+    background: linear-gradient(135deg, #f0db4f 0%, #f7df1e 100%);
+    color: #2c3e50; /* Темный текст для желтого фона */
+}
