@@ -7,53 +7,116 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="page-container">
-        <div class="header">Хэдер</div>
-        <div class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+    <div class="page">
+        <header class="header">
+            <h1 class="header__title">Хэдер</h1>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/contacts.html">Контакты</a>
+                </li>
             </ul>
-        </div>
-        <div class="content">
-            <div class="profile-header">
-                <h1 class="profile-title">Информация об авторе</h1>
-                <img class="profile-photo" src="images/Me.png" alt="Фото автора">
-                <h2 class="profile-name">Шульга Михаил Антонович</h2>
-                <p class="profile-group">ЭФБО-05-24</p>
-            </div>
-
-            <div class="about-me">
-                <p>Обо мне: Я жаба-мафеозе, рожденный на краю бездны, в низине всего света. Глупость рано ударила в голову - видимо, болотные испарения сказались. В четыре года уже активно квакал ругательствами на лягушачьем диалекте. Потом болотная школа, камуфляжная форма, драки с пиявками и стрекозами, слизень вместо клея. Так я становился сильней и хитрей. Воровал мух из чужих паутин.</p>
-            </div>
-
-            <div class="skills-container">
-                <div class="skill-tag">Непревзойдённая обоятельность</div>
-                <div class="skill-tag">Непревзойдённый авторитет</div>
-                <div class="skill-tag">Непревзойдённое кваканье на 5 языках</div>
-                <div class="skill-tag">Непревзойдённая власть и сила</div>
-            </div>
-
-            <div class="experience-section">
-                <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Главный по мухам</h3>
-                    <p class="experience-desc">Контролировал поставки мух на болотном рынке. Организовал систему распределения насекомых.</p>
+        </nav>
+        
+        <main class="main">
+            <article class="profile">
+                <div class="profile__header">
+                    <h1 class="profile__title">Информация об авторе</h1>
+                    <img class="profile__photo" src="images/Me.png" alt="Фото автора">
+                    <h2 class="profile__name">Шульга Михаил Антонович</h2>
+                    <p class="profile__group">ЭФБО-05-24</p>
                 </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Мастер подстав</h3>
-                    <p class="experience-desc">Разрабатывал и внедрял схемы по нейтрализации лягушачьих конкурентов. Специализация - чугунные колокола.</p>
+            </article>
+
+            <section class="about">
+                <h2 class="about__title">Обо мне</h2>
+                <div class="about__content">
+                    <p class="about__text">
+                        Обо мне: Я жаба-мафеозе, рожденный на краю бездны, в низине всего света. 
+                        Глупость рано ударила в голову - видимо, болотные испарения сказались. 
+                        В четыре года уже активно квакал ругательствами на лягушачьем диалекте. 
+                        Потом болотная школа, камуфляжная форма, драки с пиявками и стрекозами, 
+                        слизень вместо клея. Так я становился сильней и хитрей. Воровал мух из чужих паутин.
+                    </p>
                 </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Болотный рэпер</h3>
-                    <p class="experience-desc">Читал кваком и пел под луной. Создал уникальный стиль "Болотный бит".</p>
+            </section>
+
+            <section class="skills">
+                <h2 class="skills__title">Мои навыки</h2>
+                <div class="skills__list">
+                    <div class="skill skill--primary">
+                        <span class="skill__name">Непревзойдённая обоятельность</span>
+                    </div>
+                    <div class="skill skill--secondary">
+                        <span class="skill__name">Непревзойдённый авторитет</span>
+                    </div>
+                    <div class="skill skill--accent">
+                        <span class="skill__name">Непревзойдённое кваканье на 5 языках</span>
+                    </div>
+                    <div class="skill skill--warning">
+                        <span class="skill__name">Непревзойдённая власть и сила</span>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="footer">Футер</div>
+            </section>
+
+            <section class="experience">
+                <h2 class="experience__title">Мой опыт работы</h2>
+                <div class="experience__grid">
+                    <article class="experience-card experience-card--highlight">
+                        <h3 class="experience-card__title">Главный по мухам</h3>
+                        <p class="experience-card__desc">Контролировал поставки мух на болотном рынке. Организовал систему распределения насекомых.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Мастер подстав</h3>
+                        <p class="experience-card__desc">Разрабатывал и внедрял схемы по нейтрализации лягушачьих конкурентов. Специализация - чугунные колокола.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Болотный рэпер</h3>
+                        <p class="experience-card__desc">Читал кваком и пел под луной. Создал уникальный стиль "Болотный бит".</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p class="footer__text">Футер</p>
+        </footer>
     </div>
+
+    <script>
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Добавляем состояние hover для карточек
+        document.querySelectorAll('.experience-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.classList.add('experience-card--hover');
+            });
+            card.addEventListener('mouseleave', function() {
+                this.classList.remove('experience-card--hover');
+            });
+        });
+    </script>
 </body>
 </html>
